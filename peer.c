@@ -52,10 +52,8 @@ char* random_name() {
     
     char* name = (char*)malloc(len*sizeof(char));
     memset(name, 0, len*sizeof(char));
-    
-    strncpy(name, adjs[rand_adj], len_adj);
-    strncat(name, nouns[rand_noun], len_noun);
 
+    snprintf(name, len, "%s-%s", adjs[rand_adj], nouns[rand_noun]);
     return name;
 }
 
